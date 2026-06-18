@@ -20,19 +20,19 @@
 
     lib.makePackage = pkgs: pkgs.stdenv.mkDerivation (finalAttrs: {
     pname = "tweakcc";
-    version = "4.0.13";
+    version = "4.1.1";
 
     src = pkgs.fetchFromGitHub {
       owner = "Piebald-AI";
       repo = "tweakcc";
-      rev = "44a7d5535584b3d2a687cb512a2e624ab1ab35e5";
-      hash = "sha256-bD5vBTjYswW5BF6Bdt7SHMkOMrMu4yI9MgcpajkZDcE=";
+      rev = "master";
+      hash = "sha256-qmETHYjxGdstv0mkarCjlao6j5SUU0DEntTxRJtFr3U=";
     };
 
     pnpmDeps = pkgs.fetchPnpmDeps {
       inherit (finalAttrs) pname version src;
       fetcherVersion = 3;
-      hash = "sha256-jyu65fewiQCvCe0QImlslvgpJew/ZOJ5lqwxUdU3U24=";
+      hash = "sha256-lDYQN0dDZOXyLetR9aEB2s6rSOjQwlzodwqpFOwy2L4=";
     };
 
     nativeBuildInputs = [
