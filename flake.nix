@@ -20,18 +20,18 @@
 
     lib.makePackage = pkgs: pkgs.stdenv.mkDerivation (finalAttrs: {
     pname = "tweakcc";
-    version = "4.1.1";
+    version = "4.3.2";
 
     src = pkgs.fetchFromGitHub {
       owner = "Piebald-AI";
       repo = "tweakcc";
-      rev = "master";
-      hash = "sha256-qmETHYjxGdstv0mkarCjlao6j5SUU0DEntTxRJtFr3U=";
+      tag = "v${finalAttrs.version}";
+      hash = "sha256-WveHfFxMNgjQ2qefKVttCF2W5EOxbn2V5BPriQmwENE=";
     };
 
     pnpmDeps = pkgs.fetchPnpmDeps {
       inherit (finalAttrs) pname version src;
-      fetcherVersion = 3;
+      fetcherVersion = 4;
       hash = "sha256-lDYQN0dDZOXyLetR9aEB2s6rSOjQwlzodwqpFOwy2L4=";
     };
 
